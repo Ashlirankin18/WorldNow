@@ -19,12 +19,5 @@ final class ImageHelper {
                 }
             }
         }
-        // We will use NSCache in Unit 4
-        // NSCache - a dictionary that has the ability to cache transient data
-        // for performance improvements
-        // We will use a Singleton to build a wrapper around NSCache
     }
 }
-// use
-// im in a view controller
-// ImageHelper.fetchImage(urlString: "https:......") { error, image in }

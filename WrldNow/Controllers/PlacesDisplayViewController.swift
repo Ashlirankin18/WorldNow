@@ -21,7 +21,7 @@ class PlacesDisplayViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-       grabsTheData()
+        grabsTheData()
         placesTableView.dataSource = self
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,7 +37,6 @@ class PlacesDisplayViewController: UIViewController {
             }
             if let places = places {
                 self.places = places
-                dump(places)
             }
         }
         

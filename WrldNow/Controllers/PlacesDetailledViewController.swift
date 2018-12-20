@@ -8,22 +8,26 @@
 
 import UIKit
 class PlacesDetailledViewController: UIViewController {
-    
     @IBOutlet weak var relatedImagesCollectionView: UICollectionView!
     @IBOutlet weak var placeImage: UIImageView!
-    
-    @IBOutlet weak var placeDetail1: UILabel!
-    @IBOutlet weak var placeDetail2: UILabel!
     @IBOutlet weak var placeDetail3: UILabel!
     @IBOutlet weak var placeDetail4: UILabel!
     @IBOutlet weak var placeDetail5: UILabel!
    var index = 0
-    
+    var image = UIImage()
+    var relatedImages = [PhotoLinks]() {
+        didSet{
+            DispatchQueue.main.async {
+                self.relatedImagesCollectionView.reloadData()
+            }
+        }
+    }
     public var place: PlaceAttributes!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCollectionViewData()
         updateTheUi()
+        relatedImagesCollectionView.dataSource = self
     }
     private func getImage(){
         var urlString = String()
@@ -39,7 +43,17 @@ class PlacesDetailledViewController: UIViewController {
                 self.index += 1
             }
         }
-        
+    }
+    func getCollectionViewData(){
+        PlacesApiClient.getRelatedImages { (error, data) in
+            if let error = error{
+                print(error.errorMessage())
+            }
+            if let data = data{
+                self.relatedImages = data
+                
+            }
+        }
     }
     private func updateTheUi(){
         getImage()
@@ -52,6 +66,4 @@ class PlacesDetailledViewController: UIViewController {
             placeDetail3.text = "This location has no known opening hours at this time."
         }
     }
-    
-
 }

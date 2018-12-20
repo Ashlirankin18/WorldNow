@@ -34,7 +34,7 @@ struct CompassPoint:Codable{
     let southwest: Coordinates
 }
 struct IsOpen:Codable {
-    let open_now: Bool
+    let open_now: Bool?
 }
 struct PhotoInfo:Codable {
     let height: Int
