@@ -26,8 +26,8 @@ final class PlacesApiClient {
         }
     }
     
-    static func getRelatedImages( completionHandler: @escaping (AppError?,[PhotoLinks]?) -> Void){
-        let urlString = "https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=Guyana+NewAmsterdam&subscription-key=2c6cb636ab61411eac5bf546b2ec0987"
+    static func getRelatedImages(placeKeyword:String,location:String, completionHandler: @escaping (AppError?,[PhotoLinks]?) -> Void){
+        let urlString = "https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=\(placeKeyword)+\(location)&subscription-key=2c6cb636ab61411eac5bf546b2ec0987"
         NetworkHelper.performDataTask(urlString: urlString, httpMethod: "GET") { (error, data, response) in
             if let error = error {
                 completionHandler(error,nil)
@@ -40,6 +40,26 @@ final class PlacesApiClient {
                     completionHandler(AppError.decodingError(error),nil)
                 }
              
+            }
+        }
+    }
+    static func getCountryData(continentKeyword:String, completionHandler:@escaping(AppError?,[Country]?) -> Void){
+        
+        let urlString = "https://restcountries.eu/rest/v2/region/\(continentKeyword)"
+        NetworkHelper.performDataTask(urlString: urlString, httpMethod: "GET") { (error, data, response) in
+            if let error = error {
+                completionHandler(error,nil)
+            }
+            if let data = data {
+                do{
+                    let countries = try JSONDecoder().decode(Country.self, from: data)
+                    completionHandler(nil,[countries])
+                } catch{
+                 completionHandler(AppError.decodingError(error),nil)
+                }
+            }
+            if let response = response {
+                print(response)
             }
         }
     }

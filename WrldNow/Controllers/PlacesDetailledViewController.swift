@@ -45,7 +45,7 @@ class PlacesDetailledViewController: UIViewController {
         }
     }
     func getCollectionViewData(){
-        PlacesApiClient.getRelatedImages { (error, data) in
+        PlacesApiClient.getRelatedImages(placeKeyword: "Park", location: "NewYork") { (error, data) in
             if let error = error{
                 print(error.errorMessage())
             }
