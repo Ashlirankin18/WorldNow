@@ -8,16 +8,17 @@
 
 import Foundation
 struct CountryCollection:Codable {
-    let countryArray : Countries
+    let countryArray : [Countries]
 }
 struct Countries:Codable {
     let name:String
     let capital:String
     let population:Int
-    let currencies: [CurrencyInfo]
-    let flag: URL
+    let currencies: [CurrencyInfo]?
+    let flag: String
+    
 }
 struct CurrencyInfo:Codable {
-    let name: String
-    let symbol: String
+    let name: String?
+    let symbol: String?
 }

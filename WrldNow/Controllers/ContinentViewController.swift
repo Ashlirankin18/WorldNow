@@ -20,7 +20,7 @@ class ContinentViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = continentTableView.indexPathForSelectedRow,
         let destination = segue.destination as? CountryViewController else {fatalError("No destination found")}
-    
+        destination.continentName = continents[indexPath.row].name
     }
 }
 extension ContinentViewController:UITableViewDataSource {
@@ -35,7 +35,7 @@ extension ContinentViewController:UITableViewDataSource {
             "No cell found")}
         cell.continentName.text =  continent.name
         cell.numberOfCountries.text = "Number of countries: \(continent.numberOfCountries)"
-        cell.continentImage.image = continent.image
+      //  cell.continentImage.image = continent.image
         return cell
     }
     

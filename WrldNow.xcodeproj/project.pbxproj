@@ -27,6 +27,7 @@
 		2E83379F21D33C130039C985 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E83379E21D33C130039C985 /* CountryViewController.swift */; };
 		2E8337A121D33E690039C985 /* CountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8337A021D33E690039C985 /* CountryCollectionViewCell.swift */; };
 		2E8337A321D342D20039C985 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8337A221D342D20039C985 /* CountryModel.swift */; };
+		2EA365882209CD2F00FFDC5E /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 2EA365872209CD2F00FFDC5E /* TODO */; };
 		2EBF619C21CC02FE00BD83C0 /* RelatedPhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF619B21CC02FE00BD83C0 /* RelatedPhotosModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		2E83379E21D33C130039C985 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		2E8337A021D33E690039C985 /* CountryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E8337A221D342D20039C985 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		2EA365872209CD2F00FFDC5E /* TODO */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		2EBF619B21CC02FE00BD83C0 /* RelatedPhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedPhotosModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,12 +100,14 @@
 		2E6684AE21C9A97D00FA2E12 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2E83379821D327DA0039C985 /* ContinentViewController.swift */,
+				2E83379E21D33C130039C985 /* CountryViewController.swift */,
+				2E8337A021D33E690039C985 /* CountryCollectionViewCell.swift */,
 				2E66848621C9593E00FA2E12 /* PlacesDisplayViewController.swift */,
 				2E66848821C9595100FA2E12 /* PlacesDetailledViewController.swift */,
 				2E4D87C521CB5B2D00C8C3B2 /* PlacesDetailledViewControllerExtension.swift */,
 				2E4D87C321CB5AEF00C8C3B2 /* relatedImages.swift */,
-				2E83379821D327DA0039C985 /* ContinentViewController.swift */,
-				2E83379E21D33C130039C985 /* CountryViewController.swift */,
+				2E83379C21D32CF70039C985 /* TableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,8 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				2E66847621C954A600FA2E12 /* Main.storyboard */,
-				2E8337A021D33E690039C985 /* CountryCollectionViewCell.swift */,
-				2E83379C21D32CF70039C985 /* TableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +133,7 @@
 		2E6684B321C9AD0900FA2E12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2EA365872209CD2F00FFDC5E /* TODO */,
 				2E8337A421D343FA0039C985 /* Continent and Countries */,
 				2E8337A521D3440E0039C985 /* Places and RelatedImages */,
 				2E6684B421C9AE0800FA2E12 /* SecretKeys.swift */,
@@ -221,6 +224,7 @@
 			files = (
 				2E66847D21C954A700FA2E12 /* LaunchScreen.storyboard in Resources */,
 				2E66847A21C954A700FA2E12 /* Assets.xcassets in Resources */,
+				2EA365882209CD2F00FFDC5E /* TODO in Resources */,
 				2E66847821C954A600FA2E12 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

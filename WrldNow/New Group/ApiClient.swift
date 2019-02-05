@@ -43,7 +43,7 @@ final class PlacesApiClient {
             }
         }
     }
-    static func getCountryData(continentKeyword:String, completionHandler:@escaping(AppError?,[Country]?) -> Void){
+    static func getCountryData(continentKeyword:String, completionHandler:@escaping(AppError?,[Countries]?) -> Void){
         
         let urlString = "https://restcountries.eu/rest/v2/region/\(continentKeyword)"
         NetworkHelper.performDataTask(urlString: urlString, httpMethod: "GET") { (error, data, response) in
@@ -52,8 +52,8 @@ final class PlacesApiClient {
             }
             if let data = data {
                 do{
-                    let countries = try JSONDecoder().decode(Country.self, from: data)
-                    completionHandler(nil,[countries])
+                    let countries = try JSONDecoder().decode([Countries].self, from: data)
+                    completionHandler(nil,countries)
                 } catch{
                  completionHandler(AppError.decodingError(error),nil)
                 }

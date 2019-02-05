@@ -58,6 +58,7 @@ class PlacesDisplayViewController: UIViewController {
             }
             if let images = image {
             self.image = images
+                dump(image)
             }
         }
          return image
